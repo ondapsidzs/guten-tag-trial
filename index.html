@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;900&family=Roboto:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="fixedBackground"></div>
+
+    <main id="main" class="flex flex-column">
+
+        <nav id="navbar" class="flex flex-jc-sb flex-ai-c content-margin-80">
+
+            <a href="#"><img src="./img/logo.png" alt="" id="logo"></a>
+
+            <div id="nav-links" class="flex flex-ai-c">
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" id="login" class="button">Login</a></li>
+
+            </div>
+
+            <!-- <img src="./img/menu.png" alt="" id="menu"> -->
+            <span id="menu"></span>
+
+        </nav>
+
+        <section id="intro">
+
+            <div class="flex flex-column content-margin-80">
+
+                <h1 id="greetings">Guten Tag!</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui unde quas officiis nesciunt obcaecati
+                    optio fuga aliquam, repudiandae repellat facilis voluptatibus, veniam blanditiis dolores deleniti
+                    eveniet voluptas suscipit laudantium. Expedita?
+                    Eveniet culpa non mollitia odio odit voluptate voluptatum quidem et fuga unde qui ducimus nesciunt
+                    repellat aspernatur voluptatem, laudantium harum libero totam! Qui quos perferendis mollitia
+                    consectetur aliquid saepe? Autem.</p>
+                <span><a href="#" class="button">Learn more...</a></span>
+
+            </div>
+
+        </section>
+
+        <section id="content1">
+
+            <img src="./img/switz1.jpg" alt="" id="content1-bg">
+
+            <div id="content1-content" class="flex content-margin-80">
+
+                <div class="flex flex-column flex-jc-c">
+
+                    <h2>Switzerland</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci aliquid ex mollitia quod ad
+                        dicta. Porro omnis eaque qui autem aliquid, sint placeat tempore dolorem aspernatur odit, atque
+                        natus numquam?
+                    </p>
+                    <span><a href="#" class="button">Read more...</a></span>
+
+                </div>
+
+                <div id="images" class="flex flex-column flex-jc-c">
+
+                    <img src="./img/switz1.jpg" alt="" id="images-image">
+
+                    <div id="images-slider" class="flex" onscroll="">
+
+                        <li><img src="./img/switz2.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz2.jpg')"></li>
+                        <li><img src="./img/switz3.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz3.jpg')"></li>
+                        <li><img src="./img/switz4.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz4.jpg')"></li>
+                        <li><img src="./img/switz5.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz5.jpg')"></li>
+                        <li><img src="./img/switz1.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz1.jpg')"></li>
+                        <li><img src="./img/switz2.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz2.jpg')"></li>
+                        <li><img src="./img/switz3.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz3.jpg')"></li>
+                        <li><img src="./img/switz4.jpg" alt="" class="images-slider-image"
+                                onclick="imageSlider('./img/switz4.jpg')"></li>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer id="footer">
+
+            <div class="flex flex-ai-c flex-jc-sb content-margin-80">
+
+                <img src="./img/logo.png" alt="" id="footer-logo">
+
+                <div id="footer-links" class="flex flex-column">
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+
+                </div>
+
+                <div id="socials" class="flex">
+
+                    <li><a href="#"><img src="./img/Facebook Icon 2.png" alt="" class="socials-social"></a></li>
+                    <li><a href="#"><img src="./img/Twitter Icon 2.png" alt="" class="socials-social"></a></li>
+                    <li><a href="#"><img src="./img/Instagram Icon 2.png" alt="" class="socials-social"></a></li>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+    <script>
+
+        const menu = document.querySelector('#menu');
+        const navlink = document.querySelector('#nav-links');
+
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+
+            if (navlink.style.left == "" || navlink.style.left == "100vw") {
+                navlink.style.left = "0px";
+                menu.style.position = "fixed";
+            } else {
+                navlink.style.left = "100vw";
+                menu.style.position = "static";
+            }
+
+        })
+
+        const image = document.querySelector('#images-image');
+        const bgImage = document.querySelector('#content1-bg');
+
+        function imageSlider(anything) {
+            image.src = anything;
+            bgImage.src = anything;
+        }
+
+    </script>
+</body>
+
+</html>
